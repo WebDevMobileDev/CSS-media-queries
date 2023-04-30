@@ -1,0 +1,140 @@
+/* --- MAIN SYNTAX --- */
+
+/* @media media-type and (media-feature){
+    css-rule or rules
+} 
+
+media-type can be: screen, print, speech or all
+
+media-feature refers to: the width of the screen or Orientation ...  */
+
+/* --- BASIC EXAMPLE --- */
+
+/* @media screen and (min-width: 600px) {
+	h1 {
+		color: red;
+	}
+} */
+
+/* --- MULTIPLE RULES --- */
+
+/* @media screen and (max-width: 600px) {
+	h1 {
+		color: red;
+	}
+	p {
+		background-color: blue;
+	}
+} */
+
+/* --- MULTIPLE MEDIA-FEATURES ---  */
+
+/* @media screen and (min-width: 600px) and (max-width: 1000px) {
+	h1 {
+		color: red;
+	}
+} */
+
+/* --- MULTIPLE MEDIA-TYPES ---  */
+
+/* @media screen, print {
+	h1 {
+		color: red;
+	}
+} */
+
+/* --- DIFFERENT FORMS IN WHICH YOU'L FREQUENLY SEE MEDIA       QUERIES --- */
+
+/* @media screen and (media-feature){
+     css-rule 
+}  
+
+@media only screen and (media-feature){
+    css-rule 
+}
+
+@media (media-feature){
+    css-rule
+}   */
+
+/* --- LATEST AND EASY MEDIA QUERY SYNTAX: INEQUALITY or RANGE SYNTAX --- */
+/* 1. */
+/* @media screen and (max-width: 600px){ 
+        css-rule
+    } */
+/* Equivalent to */
+/* @media screen and (width <= 600px){ 
+        css-rule 
+    } */
+
+/* 2.*/
+/* @media screen and (min-width: 1000px){ 
+        css-rule
+    } */
+/* Equivalent to */
+/* @media screen and (width >= 1000px){ 
+        css-rule 
+    } */
+
+/* 3.*/
+/* @media screen and (min-width: 600px) and (max-width: 1000px){ 
+        css-rule
+    } */
+/* Equivalent to */
+/* @media screen and ( 600px <= width <= 1000px){ 
+        css-rule 
+    } */
+
+/* --- MAIN BREAK POINTS --- */
+/* @media screen and (width >= 1000px) {
+    css-rule
+} 
+
+@media screen and (600 < width < 1000px) {
+    css-rule
+}
+
+@media screen and (width < 600px) {
+    css-rule
+}  */
+
+/* --- EXAMPLE WITH MAIN BREAK POINTS --- */
+
+@media screen and (width < 600px) {
+	h1 {
+		color: red;
+	}
+	.small {
+		display: block;
+	}
+	.medium,
+	.large {
+		display: none;
+	}
+}
+
+@media screen and (600px < width < 1000px) {
+	h1 {
+		color: blue;
+	}
+	.medium {
+		display: block;
+	}
+	.small,
+	.large {
+		display: none;
+	}
+}
+
+@media screen and (width >= 1000px) {
+	h1 {
+		color: blueviolet;
+	}
+	.large {
+		display: block;
+	}
+	.small,
+	.medium {
+		display: none;
+	}
+}
